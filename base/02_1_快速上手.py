@@ -65,7 +65,6 @@ print('********* 第 3 章 函数 ***********')
 
 print('cats', 'dogs', 'mice', sep=',')
 
-
 # def spam():
 #     eggs = 31337
 # spam()
@@ -144,4 +143,105 @@ print('cats', 'dogs', 'mice', sep=',')
 #         break
 
 print('********* 第 4 章 列表 ***********')
+
+spam = [1, 2, 3]
+spam += ['A', 'B', 'C']
+print(spam)
+
+spam = ['cat', 'bat', 'rat', 'elephant']
+del spam[2]
+print(spam)  # ['cat', 'bat', 'elephant']
+
+cat = ['fat', 'black', 'loud']
+size, color, disposition = cat
+print(size, color, disposition)
+
+spam = ['hello', 'hi', 'howdy', 'heyas', 'hello']
+print(spam.index('hello'))
+# print(spam.index('hello hello'))  # ValueError: 'hello hello' is not in list
+
+spam = ['cat', 'dog', 'bat']
+spam.insert(1, 'chicken')
+print(spam)  # ['cat', 'chicken', 'dog', 'bat']
+
+spam = ['cat', 'bat', 'rat', 'cat', 'hat', 'cat']
+spam.remove('cat')
+print(spam)  # ['bat', 'rat', 'cat', 'hat', 'cat']
+
+# spam = [1, 3, 2, 4, 'Alice', 'Bob']
+# spam.sort()  # TypeError: '<' not supported between instances of 'str' and 'int'
+spam = ['a', 'z', 'A', 'Z']
+spam.sort()
+print(spam)  # ['A', 'Z', 'a', 'z']
+spam.sort(key=str.lower)
+print(spam)  # ['A', 'a', 'Z', 'z']
+
+# import random
+# messages = ['It is certain',
+#             'It is decidedly so',
+#             'Yes definitely',
+#             'Reply hazy try again',
+#             'Ask again later',
+#             'Concentrate and ask again',
+#             'My reply is no',
+#             'Outlook not so good',
+#             'Very doubtful']
+# print(messages[random.randint(0, len(messages) - 1)])
+
+print('Four score and seven '
+      'year ago...')
+
+# name = 'Zophie a cat'
+# name[7] = 'the'  # TypeError: 'str' object does not support item assignment
+
+print(type('hello'), type(('hello',)))
+
+# def eggs(someParameter=[]):
+#     someParameter.append('Hello')
+# spam = [1, 2, 3]
+# eggs(spam)
+# print(spam)
+
+# import copy
+# spam = ['A', 'B', 'C', 'D']
+# cheese = copy.copy(spam)
+# cheese[1] = 42
+# print(spam)  # ['A', 'B', 'C', 'D']
+# print(cheese)  # ['A', 42, 'C', 'D']
+#
+# spam = ['A', 'B', ['C', 'D']]
+# cheese = copy.copy(spam)
+# cheese[2][0] = 42
+# print(spam)  # ['A', 'B', [42, 'D']]
+# print(cheese)  # ['A', 'B', [42, 'D']]
+#
+# spam = ['A', 'B', ['C', 'D']]
+# cheese = copy.deepcopy(spam)
+# cheese[2][0] = 42
+# print(spam)  # ['A', 'B', ['C', 'D']]
+# print(cheese)  # ['A', 'B', [42, 'D']]
+
+# spam = ['apples', 'bananas', 'tofu', 'cats']
+# def listToString(list=[]):
+#     return ', '.join(spam[:-1]) + ', and ' + spam[-1]
+# print(listToString(spam))
+
+# grid = [['.', '.', '.', '.', '.', '.'],
+#         ['.', 'O', 'O', '.', '.', '.'],
+#         ['O', 'O', 'O', 'O', '.', '.'],
+#         ['O', 'O', 'O', 'O', 'O', '.'],
+#         ['.', 'O', 'O', 'O', 'O', 'O'],
+#         ['O', 'O', 'O', 'O', 'O', '.'],
+#         ['O', 'O', 'O', 'O', '.', '.'],
+#         ['.', 'O', 'O', '.', '.', '.'],
+#         ['.', '.', '.', '.', '.', '.']]
+# for j in range(len(grid[0])):
+#     for i in range(len(grid)):
+#         print(grid[i][j], end='')
+#     print()
+
+print('********* 第 5 章 字典和结构化数据 ***********')
+
+
+
 
