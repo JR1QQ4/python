@@ -242,6 +242,135 @@ print(type('hello'), type(('hello',)))
 
 print('********* 第 5 章 字典和结构化数据 ***********')
 
+eggs = {'name': 'Zophie', 'species': 'cat', 'age': '8'}
+ham = {'species': 'cat', 'age': '8', 'name': 'Zophie'}
+print(eggs == ham)
 
+spam = {'color': 'red', 'age': 42}
+print(spam.keys())
+print(spam.values())
+print(spam.items())
 
+picnicItems = {'apples': 5, 'cups': 2}
+print(picnicItems.get('cups', 0))  # 存在直接返回，2
+print(picnicItems.get('hello', 1))  # 不存在返回备用值，1
+print(picnicItems.get('hello'))  # None，有的版本会报错
 
+spam = {'name': 'Pooka', 'age': 5}
+print(spam.setdefault('color', 'black'))  # black
+print(spam)  # {'name': 'Pooka', 'age': 5, 'color': 'black'}
+print(spam.setdefault('color', 'white'))  # black
+print(spam)  # {'name': 'Pooka', 'age': 5, 'color': 'black'}
+
+# 用于统计每个字符出现的次数
+# import pprint  # 漂亮打印，格式化打印
+# message = 'It was a bright cold day in April, and the clocks were striking thirteen.'
+# count = {}
+# for character in message:
+#     count.setdefault(character, 0)
+#     count[character] += 1
+# pprint.pprint(count)
+
+# theBoard = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ', 'mid-L': ' ', 'mid-M': '', 'mid-R': ' ', 'low-L': ' ',
+#             'low-M': ' ', 'low-R': ' '}
+# def printBoard(board):
+#     print(board['top-L'] + '|' + board['top-M'] + '|' + board['top-R'])
+#     print('-+-+-')
+#     print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'])
+#     print('-+-+-')
+#     print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
+# turn = 'X'
+# for i in range(9):
+#     printBoard(theBoard)
+#     print('Turn for ' + turn + '. Move on which space?')
+#     move = input()
+#     theBoard[move] = turn
+#     if turn == 'X':
+#         turn = 'O'
+#     else:
+#         turn = 'X'
+
+# stuff = {'rope': 1, 'torch': 6, 'gold coin': 42, 'dagger': 1, 'arrow': 12}
+# def displayInventory(inventory):
+#     print("Inventory:")
+#     item_total = 0
+#     for k, v in inventory.items():
+#         print(str(v) + ' ' + k)
+#         item_total += v
+#     print("Total number of items: " + str(item_total))
+# displayInventory(stuff)
+
+# def func(arg: arg_type, optarg: arg_type = default) -> return_type:    ...
+
+# def addToInventory(inventory: dict, addedItems: list):
+#     for k in addedItems:
+#         inventory.setdefault(k, 0)
+#         inventory[k] += 1
+#     return inventory
+# def displayInventory(inventory):
+#     print("Inventory:")
+#     item_total = 0
+#     for k, v in inventory.items():
+#         print(str(v) + ' ' + k)
+#         item_total += v
+#     print("Total number of items: " + str(item_total))
+# inv = {'gold coin': 42, 'rope': 1}
+# dragonLoot = ['gold coin', 'dagger', 'gold coin', 'gold coin', 'ruby']
+# inv = addToInventory(inv, dragonLoot)
+# displayInventory(inv)
+
+print('********* 第 6 章 字符串操作 ***********')
+
+print(r'That is Carol\'s cat.')  # That is Carol\'s cat.
+
+print('Hello' in 'Hello world!')
+
+print('12345'.islower(), '12345'.isupper())  # False False
+
+print('NOT'.istitle(), 'Not'.istitle())  # False True
+
+print('My name is Simon'.split())  # ['My', 'name', 'is', 'Simon']
+
+print('Hello'.rjust(3))
+
+# PASSWORDS = {'email': 'F7minlBDDuvMJuxESSKHFhTxFtjVB6',
+#              'blog': 'VmALvQyKAxiVH5G8v01if1MLZF3sdt',
+#              'luggage': '12345'}
+# import sys
+# print(sys.argv)
+# if len(sys.argv) < 2:
+#     print('Usage: python pw.py [account] - copy account password')
+#     sys.exit()
+# account = sys.argv[1]
+
+# Lists of animals
+# Lists of aquarium life
+# Lists of biologists by author abbreviation
+# Lists of cultivars
+# * Lists of animals
+# * Lists of aquarium life
+# * Lists of biologists by author abbreviation
+# * Lists of cultivars
+# import pyperclip
+# text = pyperclip.paste()
+# lines = text.split('\n')
+# for i in range(len(lines)):
+#     lines[i] = '* ' + lines[i]
+# text = '\n'.join(lines)
+# pyperclip.copy(text)
+
+# tableData = [['apples', 'oranges', 'cherries', 'banana'],
+#             ['Alice', 'Bob', 'Carol', 'David'],
+#             ['dogs', 'cats', 'moose', 'goose']]
+# def printTable(table: list) -> None:
+#     colWidths = [0] * len(table)
+#     for k, i in enumerate(table):
+#         for j in i:
+#             if len(j) > colWidths[k]:
+#                 colWidths[k] = len(j)
+#     temp = max(colWidths)
+#     for i in range(len(table[0])):
+#         for j in range(len(table)):
+#             print(table[j][i].rjust(temp, ' '), end='')
+#         print()
+# printTable(tableData)
