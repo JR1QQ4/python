@@ -56,3 +56,88 @@ import requests
 # print(elems[0].getText())
 # print(elems[0].attrs)
 # print(elems[0].get('class'))  # get获取属性值
+
+# 需要把对应浏览器驱动放到 python\\script 目录下，geckodriver.exe
+# from selenium import webdriver
+# firefox_path = 'C:\\Program Files\\Mozilla Firefox\\firefox.exe'
+# browser = webdriver.Firefox()
+# print(type(browser))
+# browser.get('https://www.baidu.com')
+
+# 使用 CSS 类 name 的元素：
+#     browser.find_element_by_class_name(name)
+#     browser.find_elements_by_class_name(name)
+# 匹配 CSS selector 的元素：
+#     browser.find_element_by_css_selector(selector)
+#     browser.find_elements_by_css_selector(selector)
+# 匹配 id 属性值的元素：
+#     browser.find_element_by_id(id)
+#     browser.find_elements_by_id(id)
+# 完全匹配提供的 text 的<a>元素：
+#     browser.find_element_by_link_text(text)
+#     browser.find_elements_by_link_text(text)
+# 包含提供的 text 的<a>元素：
+#     browser.find_element_by_partial_link_text(text)
+#     browser.find_elements_by_partial_link_text(text)
+# 匹配 name 属性值的元素：
+#     browser.find_element_by_name(name)
+#     browser.find_elements_by_name(name)
+# 匹配标签 name 的元素(大小写无关， <a>元素匹配'a'和'A')：
+#     browser.find_element_by_tag_name(name)
+#     browser.find_elements_by_tag_name(name)
+
+# tag_name             标签名，例如 'a'表示<a>元素
+# get_attribute(name)  该元素 name 属性的值
+# text                 该元素内的文本，例如<span>hello</span>中的'hello'
+# clear()              对于文本字段或文本区域元素，清除其中输入的文本
+# is_displayed()       如果该元素可见，返回 True，否则返回 False
+# is_enabled()         对于输入元素，如果该元素启用，返回 True，否则返回 False
+# is_selected()        对于复选框或单选框元素，如果该元素被选中，选择 True，否则返回 False
+# location             一个字典，包含键'x'和'y'，表示该元素在页面上的位置
+
+# from selenium import webdriver
+# browser = webdriver.Firefox()
+# browser.get('https://www.bilibili.com/')
+# try:
+#     elem = browser.find_element_by_class_name('sortable')
+#     print('Found <%s> element with that class name!' % elem.tag_name)
+#     print(type(elem))
+#     elem.click()
+#     search_elem = browser.find_element_by_class_name('nav-search-keyword')
+#     search_elem.send_keys('原神')
+#     btn_elem = browser.find_element_by_class_name('nav-search-submit')
+#     btn_elem.click()
+# except:
+#     print('Was not able to find an element with that name.')
+
+# selenium.webdriver.common.keys 模块中常用的变量:
+# Keys.DOWN, Keys.UP, Keys.LEFT,Keys.RIGHT      键盘箭头键
+# Keys.ENTER, Keys.RETURN                       回车和换行键
+# Keys.HOME, Keys.END,
+# Keys.PAGE_DOWN,Keys.PAGE_UP                   Home键,End键,PageUp键和Page Down键
+# Keys.ESCAPE, Keys.BACK_SPACE,Keys.DELETE Esc  Backspace和字母键
+# Keys.F1, Keys.F2, . . . , Keys.F12            键盘顶部的 F1到 F12键
+# Keys.TAB                                      Tab 键
+
+# import time
+# from selenium import webdriver
+# from selenium.webdriver.common.keys import Keys
+# browser = webdriver.Firefox()
+# browser.get('https://www.acfun.cn/')
+# time.sleep(3)
+# htmlElem = browser.find_element_by_tag_name('html')
+# htmlElem.send_keys(Keys.END)  # scrolls to bottom
+# htmlElem.send_keys(Keys.HOME)  # scrolls to top
+
+# 点击浏览器按钮:
+# browser.back()      点击“返回”按钮
+# browser.forward()   点击“前进”按钮
+# browser.refresh()   点击“刷新”按钮
+# browser.quit()      点击“关闭窗口”按钮
+
+
+
+
+
+
+
