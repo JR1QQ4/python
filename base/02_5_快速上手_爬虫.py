@@ -42,17 +42,17 @@ import requests
 # playFile.close()
 
 # 从 HTML 创建一个 BeautifulSoup 对象
-import bs4
-res = requests.get('http://www.baidu.com')
-res.raise_for_status()
-res.encoding = 'utf-8'
-noStarchSoup = bs4.BeautifulSoup(res.text, features="lxml")
-print(type(noStarchSoup))  # <class 'bs4.BeautifulSoup'>
-elems = noStarchSoup.select(".mnav")
-print(type(elems))  # <class 'bs4.element.ResultSet'>
-print(len(elems))
-print(type(elems[0]))  # <class 'bs4.element.Tag'>
-print(elems[0])
-print(elems[0].getText())
-print(elems[0].attrs)
-print(elems[0].get('class'))  # get获取属性值
+# import bs4
+# res = requests.get('http://www.baidu.com')
+# res.raise_for_status()
+# res.encoding = 'utf-8'
+# noStarchSoup = bs4.BeautifulSoup(res.text, features="lxml")
+# print(type(noStarchSoup))  # <class 'bs4.BeautifulSoup'>
+# elems = noStarchSoup.select(".mnav")
+# print(type(elems))  # <class 'bs4.element.ResultSet'>
+# print(len(elems))
+# print(type(elems[0]))  # <class 'bs4.element.Tag'>
+# print(elems[0])
+# print(elems[0].getText())
+# print(elems[0].attrs)
+# print(elems[0].get('class'))  # get获取属性值
