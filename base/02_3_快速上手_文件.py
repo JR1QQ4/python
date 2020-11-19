@@ -166,4 +166,71 @@ print(os.listdir(os.getcwd()))
 #         # os.unlink(filename)
 #         print(filename)
 
+# shutil.rmtree()函数不可恢复地删除文件和文件
+# 用 send2trash 模块安全地删除，可以在 回收站 里查看
+# from send2trash import send2trash
+# baconFile = open('bacon.txt', 'a')
+# baconFile.write('Bacon is not a vegetable.')
+# baconFile.close()
+# send2trash('bacon.txt')
 
+# os.walk()函数每次遍历返回：
+# - 当前文件夹名称的字符串
+# - 当前文件夹中子文件夹的字符串的列表
+# - 当前文件夹中文件的字符串的列表
+# for folderName, subfolders, filenames in os.walk(os.getcwd()):
+#     print('The current folder is ' + folderName)
+#     print(subfolders)
+#     print(filenames)
+#     for subfolder in subfolders:
+#         print('SUBFOLDER OF ' + folderName + ': ' + subfolder)
+#     for filename in filenames:
+#         print('FILE INSIDE ' + folderName + ': ' + filename)
+#     print('')
+
+# 读取 ZIP 文件
+# import zipfile
+# exampleZip = zipfile.ZipFile('example.zip')
+# print(exampleZip.namelist())
+# spamInfo = exampleZip.getinfo('spam.txt')
+# print(spamInfo.file_size)
+# print(spamInfo.compress_size)
+# print('Compressed file is %sx smaller!' % (round(spamInfo.file_size / spamInfo
+#                                                  .compress_size, 2)))
+# exampleZip.close()
+
+# 从 ZIP 文件中解压缩
+# import zipfile
+# exampleZip = zipfile.ZipFile('example.zip')
+# # exampleZip.extract('spam.txt')  # 解压单个文件
+# exampleZip.extractall('example')  # 全部解压，可以指定解压路径，不存在就创建
+# exampleZip.close()
+
+# 创建和添加到 ZIP 文件
+# import zipfile
+# newZip = zipfile.ZipFile('new.zip', 'w')
+# newZip.write('example\\spam.txt', compress_type=zipfile.ZIP_DEFLATED)
+# newZip.close()
+# for folderName, subfolders, filenames in os.walk(os.getcwd()):
+#     for subfolder in subfolders:
+#         newZip.write(subfolder, compress_type=zipfile.ZIP_DEFLATED)
+#     for filename in filenames:
+#         newZip.write(filename, compress_type=zipfile.ZIP_DEFLATED)
+
+# def fileToZip():
+#     import zipfile
+#     newZip = zipfile.ZipFile('new.zip', 'w')
+#     def writeToZip(file_path):
+#         for folder_file in os.listdir(file_path):
+#             folder_file_path = os.path.join(os.getcwd(), file_path, folder_file)
+#             current_file_path = file_path + '\\' + folder_file
+#             if os.path.isfile(folder_file_path):
+#                 newZip.write(current_file_path, compress_type=zipfile.ZIP_DEFLATED)
+#             elif os.path.isdir(folder_file_path):
+#                 newZip.write(current_file_path, compress_type=zipfile.ZIP_DEFLATED)
+#                 writeToZip(current_file_path)
+#         if len(os.listdir(file_path)) == 0:
+#             return
+#     writeToZip('example')
+#     newZip.close()
+# fileToZip()
