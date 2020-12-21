@@ -36,5 +36,5 @@ def backupToZip(folder):
 
 
 # backupToZip('C:\\delicious')
-backupToZip('C:\\ZZZZZZZZZZ\\python\\base\\example')
+backupToZip('C:\\ZZZZZZZZZZ\\python\\base1\\example')
 

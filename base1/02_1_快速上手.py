@@ -18,7 +18,7 @@ print(str(num_01), str(num_02), str(num_03), str(num_04))
 print(str(-3.14), str(29))
 print(float('3.14'))
 print(int(1.25))
-# print(int('99.99'))  # ValueError: invalid literal for int() with base 10: '99.99'
+# print(int('99.99'))  # ValueError: invalid literal for int() with base1 10: '99.99'
 
 print(42 == '42')  # False
 print(42 == 42.0)  # True
