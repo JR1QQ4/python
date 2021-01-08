@@ -25,10 +25,10 @@ b = a[:]
 assert b == a and b is not a
 
 b = a
-print('Before:', a) # ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+print('Before:', a)  # ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 a[:] = [101, 102, 103]
 assert a is b
-print('After', a) # [101, 102, 103]
+print('After', a)  # [101, 102, 103]
 
 
 
