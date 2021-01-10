@@ -1,3 +1,3 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
-# 类与继承
+# 元素及属性
