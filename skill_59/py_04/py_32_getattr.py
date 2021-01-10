@@ -35,6 +35,42 @@ print('exists:', data.exists)  # exists: 5，不会触发 getattr
 print('foo:', data.foo)  # foo: Value for foo，触发 getattr
 print('foo:', data.foo)  # foo: Value for foo
 
+print('*' * 50)
 
 
+class ValidatingDB(object):
+    def __init__(self):
+        self.exists = 5
 
+    def __getattribute__(self, name):
+        print('Called __getattribute__(%s)' % name)
+        try:
+            return super().__getattribute__(name)
+        except AttributeError:
+            value = 'Value for %s' % name
+            setattr(self, name, value)
+            return value
+
+
+data = ValidatingDB()
+print('exists:', data.exists)  # exists: 5，会调用 getattribute
+print('foo:', data.foo)  # foo: Value for foo，会调用 getattribute
+print('foo:', data.foo)  # foo: Value for foo，会调用 getattribute
+
+print('*' * 50)
+
+
+class BrokenDictionaryDB(object):
+    def __init__(self, data):
+        self._data = data
+
+    def __getattribute__(self, item):
+        print('Called __getattribute__(%s)' % item)
+        # return self._data[item]  # RecursionErro，无限递归调用
+
+        data_dict = super().__getattribute__('_data')
+        return data_dict[item]
+
+
+data = BrokenDictionaryDB({'foo': 3})
+data.foo
