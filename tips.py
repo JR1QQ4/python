@@ -138,3 +138,55 @@ new_sections = conf.sections()
 # print(options)
 # print(items)
 # print(new_sections)
+
+# 8.json
+import json
+a_json = '{"a":"111", "b":"222", "c": ["d", "e", "f"]}'
+json_to_obj = json.loads(a_json, encoding='utf-8')
+obj_to_json = json.dumps(json_to_obj)
+# print(json_to_obj)
+# print(obj_to_json)
+
+# 9.eval
+# o = eval('{"a":"111", "b":"222", "c": ["d", "e", "f"]}')
+# print(o)
+# str1 = "[{11,22},{22,33},{33,44},{44,55}]"
+# print(type(str1))
+# list1 = eval(str1)
+# print(type(list1))
+# x = '7'
+# print(type(x))
+# a = eval(x)
+# print(type(a))
+
+# 10.MySQL
+# import pymysql
+# conn = pymysql.connect(
+#     user=None,
+#     password="",
+#     host=None,
+#     database=None,
+#     unix_socket=None,
+#     port=0,
+#     charset="utf8",
+#     cursorclass=pymysql.cursors.DictCursor  # 返回字典类型的值
+# )
+# cursor = conn.cursor()
+# sql1 = ''
+# count = cursor.execute(sql1)
+# one = cursor.fetchone()
+# two = cursor.fetchone()
+# all = cursor.fetchall()
+# cursor.close()
+# conn.close()
+
+# 11.json_path
+import jsonpath
+import json
+a_json = {"a":"111", "b":"222", "c": ["d", "e", "f"]}
+a_str = '{"a":"111", "b":"${username}", "c": ["d", "e", "f"]}'
+res = jsonpath.jsonpath(a_json, "$.c[1]")
+res1 = jsonpath.jsonpath(json.loads(a_str), "$..*")
+# print(res)
+print(res1)
+
