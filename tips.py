@@ -188,5 +188,70 @@ a_str = '{"a":"111", "b":"${username}", "c": ["d", "e", "f"]}'
 res = jsonpath.jsonpath(a_json, "$.c[1]")
 res1 = jsonpath.jsonpath(json.loads(a_str), "$..*")
 # print(res)
-print(res1)
+# print(res1)
 
+# 12.生成公钥私钥与加密解密
+# pip install pycryptodome
+def create_rsa_key():  # 生成私钥公钥
+    from Crypto import Random
+    from Crypto.PublicKey import RSA
+    random_gen = Random.new().read  # 伪随机数生成器
+    rsa = RSA.generate(1024, random_gen)  # rsa 算法生成实例
+    private_pem = rsa.exportKey()  # 私钥生成
+    with open("private.pem", "wb") as f:
+        f.write(private_pem)
+    public_pem = rsa.publickey().exportKey()  # 公钥生成
+    with open("public.pem", "wb") as f:
+        f.write(public_pem)
+def encryption():  # 加密
+    from Crypto.PublicKey import RSA
+    from Crypto.Cipher import PKCS1_v1_5
+    import base64
+    message = "Hello, world!"
+    rsa_key = RSA.importKey(open("public.pem").read())
+    cipher = PKCS1_v1_5.new(rsa_key)  # 创建用于执行 pkcs1_v1_5 加密或解密的密码
+    cipher_text = base64.b64encode(cipher.encrypt(message.encode('"utf-8')))
+    print(cipher_text)
+    print(cipher_text.decode("utf-8"))
+    return cipher_text.decode("utf-8")
+def decryption():  # 解密
+    from Crypto.PublicKey import RSA
+    from Crypto.Cipher import PKCS1_v1_5
+    import base64
+    cipher_text = encryption()
+    encrypt_text = cipher_text.encode("utf-8")
+    rsa_key = RSA.importKey(open("private.pem").read())
+    cipher = PKCS1_v1_5.new(rsa_key)  # 创建用于执行 pkcs1_v1_5 加密或解密的密码
+    text = cipher.decrypt(base64.b64decode(encrypt_text), "解密失败")
+    print(text.decode("utf-8"))
+def add_signing():  # 加签（使用私钥加签）
+    from Crypto.PublicKey import RSA
+    from Crypto.Signature import PKCS1_v1_5
+    from Crypto.Hash import SHA
+    import base64
+    message = "This is a request message..."
+    rsa_key = RSA.importKey(open("private.pem").read())
+    signer = PKCS1_v1_5.new(rsa_key)
+    digest = SHA.new()
+    digest.update(message.encode("utf-8"))
+    sign = signer.sign(digest)
+    signature = base64.b64encode(sign)
+    print(signature.decode("utf-8"))
+    return signature.decode("utf-8")
+def check_signing():  # 验签（使用公钥验签）
+    from Crypto.PublicKey import RSA
+    from Crypto.Signature import PKCS1_v1_5
+    from Crypto.Hash import SHA
+    import base64
+    message_verify = "This is a request message..."
+    signature = add_signing()
+    rsa_key = RSA.importKey(open("public.pem").read())
+    verifier = PKCS1_v1_5.new(rsa_key)
+    hash_msg = SHA.new()
+    hash_msg.update(message_verify.encode("utf-8"))
+    print(verifier.verify(hash_msg, base64.b64decode(signature)))
+# create_rsa_key()
+# encryption()
+# decryption()
+# add_signing()
+# check_signing()
