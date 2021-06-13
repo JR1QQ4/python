@@ -111,7 +111,7 @@ class RequestsTest:
 
     @staticmethod
     def test12():
-        files = {'file': open('爬虫.md', 'rb')}
+        files = {'file': open('../爬虫.md', 'rb')}
         res = requests.post("http://httpbin.org/post", files=files)
         print(res.text)
 
