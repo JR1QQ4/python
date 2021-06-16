@@ -51,3 +51,4 @@ class TestZip:
             from threading import Thread
             t = Thread(target=TestZip.extract_file, args=(z_file, password))
             t.start()
+
