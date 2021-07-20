@@ -7,7 +7,7 @@ print('********* 第 12 章 处理 Excel 电子表格 ***********')
 import openpyxl
 
 # 使用 openyxl 模块打开 Excel 文档
-wb = openpyxl.load_workbook('data\\example.xlsx')
+wb = openpyxl.load_workbook('data/example.xlsx')
 # print(type(wb))  # <class 'openpyxl.workbook.workbook.Workbook'>
 
 # 从工作簿中取得工作表

@@ -21,10 +21,10 @@ print(os.getcwd())
 # os.makedirs('.\\delicious\\walnut\\waffles')  # 当文件已存在时，无法创建该文件
 
 # 绝对路径和相对路径
-print(os.path.abspath('.'))
+print(os.path.abspath(''))
 print(os.path.abspath('.\\Scripts'))
-print(os.path.isabs('.'))  # False
-print(os.path.isabs(os.path.abspath('.')))  # True
+print(os.path.isabs(''))  # False
+print(os.path.isabs(os.path.abspath('')))  # True
 print(os.path.relpath('C:\\Windows', 'C:\\'))  # Windows
 print(os.path.relpath('C:\\Windows', 'C:\\spam\\eggs'))  # ..\..\Windows
 print(os.getcwd())

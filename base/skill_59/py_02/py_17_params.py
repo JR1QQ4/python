@@ -38,7 +38,7 @@ def read_visits(data_path):
             yield int(line)
 
 
-it = read_visits('./my_numbers.txt')
+it = read_visits('my_numbers.txt')
 percentages = normalize_copy(it)
 print(percentages)
 
@@ -52,7 +52,7 @@ def normalize_func(get_iter):
     return result
 
 
-path = './my_numbers.txt'
+path = 'my_numbers.txt'
 percentages = normalize_func(lambda x: read_visits(path))
 
 

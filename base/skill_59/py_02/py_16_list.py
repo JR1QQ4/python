@@ -44,7 +44,7 @@ def index_file(handle):
             if letter == ' ':
                 yield offset
 from itertools import islice
-with open('./address.txt', 'r') as f:
+with open('address.txt', 'r') as f:
     it = index_file(f)
     results = islice(it, 0, 3)
     print(list(results))  # [0, 5, 11]

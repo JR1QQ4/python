@@ -15,7 +15,7 @@ print('********* 第 17 章 操作图像 ***********')
 from PIL import Image
 
 # 处理 Image 数据类型
-img = Image.open('data\\catlogo.png')
+img = Image.open('data/catlogo.png')
 
 # print(img.size)  # (808, 768)
 # width, height = img.size
