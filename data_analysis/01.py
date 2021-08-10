@@ -3,7 +3,7 @@
 import time
 
 import requests
-
+from bs4 import BeautifulSoup
 
 # 1
 # res = requests.get('http://www.baidu.com')
@@ -67,15 +67,58 @@ import requests
 #     print("TotalTime:", totaltime)
 
 # 6
-url = 'https://item.jd.com/100009691096.html'
-try:
-    kv = {'user-agent': 'Mozilla/5.0'}
-    r = requests.get(url, headers=kv)
-    r.raise_for_status()
-    r.encoding = r.apparent_encoding
-    print(r.text[:1000])
-except:
-    print('爬取失败')
+# url = 'https://item.jd.com/100009691096.html'
+# try:
+#     kv = {'user-agent': 'Mozilla/5.0'}
+#     r = requests.get(url, headers=kv)
+#     r.raise_for_status()
+#     r.encoding = r.apparent_encoding
+#     print(r.text[:1000])
+# except:
+#     print('爬取失败')
+
+
+# r = requests.get("http://python123.io/ws/demo.html")
+# print(r.text)
+
+demo = """<html><head><title>This is a python demo page</title></head>
+<body>
+<p class="title"><b>The demo python introduces several python courses.</b></p>
+<p class="course">Python is a wonderful general-purpose programming language. You can learn Python from novice to professional by tracking the following courses:
+<a href="http://www.icourse163.org/course/BIT-268001" class="py1" id="link1">Basic Python</a> and <a href="http://www.icourse163.org/course/BIT-1001870001" class="py2" id="link2">Advanced Python</a>.</p>
+</body></html>"""
+
+# 7
+# soup = BeautifulSoup(demo, 'html.parser')
+# print(soup)
+# print(soup.a.name)
+# print(soup.a.parent.name)
+# print(soup.a.parent.parent.name)
+# print(soup.a.attrs)
+# print(soup.a.attrs['href'])
+# print(soup.a.string)
+# print(soup.p.string)
+# print(soup.select('p'))
+# soup2 = BeautifulSoup(open("D://demo.html"), 'html.parser')
+
+# 8
+soup = BeautifulSoup(demo, 'html.parser')
+# print(soup.head)
+# print(soup.head.contents)
+# print(soup.body.contents)
+# print(soup.body.contents[1])
+# print(soup.p.parent)
+# print(soup.p.parents)
+print(soup.a.next_sibling)
+print(soup.a.previous_sibling)
+
+
+
+
+
+
+
+
 
 
 
