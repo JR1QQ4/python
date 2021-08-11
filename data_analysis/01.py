@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
+import re
 import time
 
 import requests
@@ -102,24 +103,39 @@ demo = """<html><head><title>This is a python demo page</title></head>
 # soup2 = BeautifulSoup(open("D://demo.html"), 'html.parser')
 
 # 8
-soup = BeautifulSoup(demo, 'html.parser')
+# soup = BeautifulSoup(demo, 'html.parser')
 # print(soup.head)
 # print(soup.head.contents)
 # print(soup.body.contents)
 # print(soup.body.contents[1])
 # print(soup.p.parent)
 # print(soup.p.parents)
-print(soup.a.next_sibling)
-print(soup.a.previous_sibling)
+# print(soup.a.next_sibling)
+# print(soup.a.previous_sibling)
 
-
-
-
-
-
-
-
-
+# 9
+soup = BeautifulSoup(demo, 'html.parser')
+# all_a = soup.find_all('a')
+# print(all_a)
+# all_a_b = soup.find_all(['a', 'b'])
+# print(all_a_b)
+# for tag in soup.find_all(True):
+#     print(tag.name)
+# 以 b 开始的标签
+# for tag in soup.find_all(re.compile('b')):
+#     print(tag.name)
+# 包含某个字符串
+# contains_str = soup.find_all('p', 'course')
+# print(contains_str)
+# contains_id = soup.find_all(id='link1')
+# print(contains_id)
+# contains_id = soup.find_all(id=re.compile('link'))
+# print(contains_id)
+# 获取文本
+# get_str = soup.find_all(string='Basic Python')
+# print(get_str)
+# get_str = soup.find_all(string=re.compile('python'))
+# print(get_str)
 
 
 

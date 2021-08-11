@@ -28,6 +28,34 @@
     - 上行遍历：parent、parents
     - 平行遍历：next_sibling、previous_sibling、next_siblings、previous_siblings
 - 格式化：`soup.prettify()`
+- 查找
+    - `soup.find_all(self, name=None, attrs={}, recursive=True, text=None, limit=None, **kwargs)`
+        - name：对标签名称的检索字符串
+        - attrs：对标签属性值的检索字符串，可标注属性检索
+        - recursive：是否对子孙全部检索，默认True
+        - string：`<>...</>`中字符串区域的检索字符串
+    - <>.find()：搜索且只返回一个结果，字符串类型，同find_all参数
+    - <>.find_parents() 与 <>.find_parent
+    - <>.find_next_siblings() 与 <>.find_next_sibling
+    - <>.find_previous_siblings() 与 <>.find_previous_sibling()
+
+5、信息处理
+- 信息标记
+    - HTML/XML：用于Internet上的信息交互与传递
+    - JSON：用于应用云端和节点的信息通信，接口，无注释
+    - YAML：各类系统的配置文件，有注释易读
+- 信息提取
+    - 方法一：完整解析信息的标记形式，再提取关键信息
+    - 方法二：无视标记形式，直接搜索关键信息
+    - 方法三：以上两种方式融合
+
+
+
+
+
+
+
+
 
 
 
