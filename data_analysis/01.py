@@ -4,6 +4,7 @@ import re
 import time
 
 import requests
+import bs4
 from bs4 import BeautifulSoup
 
 # 1
@@ -89,6 +90,7 @@ demo = """<html><head><title>This is a python demo page</title></head>
 <a href="http://www.icourse163.org/course/BIT-268001" class="py1" id="link1">Basic Python</a> and <a href="http://www.icourse163.org/course/BIT-1001870001" class="py2" id="link2">Advanced Python</a>.</p>
 </body></html>"""
 
+
 # 7
 # soup = BeautifulSoup(demo, 'html.parser')
 # print(soup)
@@ -114,7 +116,7 @@ demo = """<html><head><title>This is a python demo page</title></head>
 # print(soup.a.previous_sibling)
 
 # 9
-soup = BeautifulSoup(demo, 'html.parser')
+# soup = BeautifulSoup(demo, 'html.parser')
 # all_a = soup.find_all('a')
 # print(all_a)
 # all_a_b = soup.find_all(['a', 'b'])
@@ -137,5 +139,40 @@ soup = BeautifulSoup(demo, 'html.parser')
 # get_str = soup.find_all(string=re.compile('python'))
 # print(get_str)
 
+# 10
+def getHTMLText(url):
+    # noinspection PyBroadException
+    try:
+        r = requests.get(url, timeout=30)
+        r.raise_for_status()
+        r.encoding = r.apparent_encoding
+        return r.text
+    except:
+        return ""
 
 
+def fillUnivList(uList, html):
+    soup = BeautifulSoup(html, 'html.parser')
+    for tr in soup.find('tbody').children:
+        if isinstance(tr, bs4.element.Tag):
+            tds = tr('td')
+            uList.append([tds[0].string, tds[1]('name-cn').string, tds[4].string])
+
+
+def printUnivList(uList, num):
+    print("{:^10}\t{:^6}\t{:^10}".format("排名", "学校名称", "总分"))
+    for i in range(num):
+        u = uList[i]
+        print("{:^10}\t{:^6}\t{:^10}".format(u[0], u[1], u[2]))
+
+
+def main():
+    uInfo = []
+    url = 'https://www.shanghairanking.cn/rankings/bcur/2021'
+    html = getHTMLText(url)
+    fillUnivList(uInfo, html)
+    print(uInfo, 20)
+
+
+if __name__ == '__main__':
+    pass
