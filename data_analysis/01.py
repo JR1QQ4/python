@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 import re
 import time
+from pprint import pprint
 
 import requests
 import bs4
@@ -140,39 +141,32 @@ demo = """<html><head><title>This is a python demo page</title></head>
 # print(get_str)
 
 # 10
-def getHTMLText(url):
-    # noinspection PyBroadException
-    try:
-        r = requests.get(url, timeout=30)
-        r.raise_for_status()
-        r.encoding = r.apparent_encoding
-        return r.text
-    except:
-        return ""
-
-
-def fillUnivList(uList, html):
-    soup = BeautifulSoup(html, 'html.parser')
-    for tr in soup.find('tbody').children:
-        if isinstance(tr, bs4.element.Tag):
-            tds = tr('td')
-            uList.append([tds[0].string, tds[1]('name-cn').string, tds[4].string])
-
-
-def printUnivList(uList, num):
-    print("{:^10}\t{:^6}\t{:^10}".format("排名", "学校名称", "总分"))
-    for i in range(num):
-        u = uList[i]
-        print("{:^10}\t{:^6}\t{:^10}".format(u[0], u[1], u[2]))
-
-
-def main():
-    uInfo = []
-    url = 'https://www.shanghairanking.cn/rankings/bcur/2021'
-    html = getHTMLText(url)
-    fillUnivList(uInfo, html)
-    print(uInfo, 20)
-
-
-if __name__ == '__main__':
-    pass
+# def getHTMLText(url):
+#     # noinspection PyBroadException
+#     try:
+#         r = requests.get(url, timeout=30)
+#         r.raise_for_status()
+#         r.encoding = r.apparent_encoding
+#         return r.text
+#     except:
+#         return ""
+# def fillUnivList(uList, html):
+#     soup = BeautifulSoup(html, 'html.parser')
+#     for tr in soup.find('tbody').children:
+#         if isinstance(tr, bs4.element.Tag):
+#             tds = tr('td')
+#             uList.append([tds[0].string.strip(), tds[1].find(class_='name-cn').string, tds[4].string.strip()])
+# def printUnivList(uList, num):
+#     tplt = "{0:<6}\t{1:{3}<10}\t{2:<6}"
+#     print(tplt.format("排名", "学校名称", "总分", chr(12288)))
+#     for i in range(num):
+#         u = uList[i]
+#         print(tplt.format(u[0], u[1], u[2], chr(12288)))
+# def main():
+#     uInfo = []
+#     url = 'https://www.shanghairanking.cn/rankings/bcur/2021'
+#     html = getHTMLText(url)
+#     fillUnivList(uInfo, html)
+#     printUnivList(uInfo, 20)
+# if __name__ == '__main__':
+#     main()

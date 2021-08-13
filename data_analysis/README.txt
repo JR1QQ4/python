@@ -9,7 +9,8 @@
         - lxml的XML解析器——pip install lxml
         - html5lib的解析器——pip install html5lib
 - Projects：实战项目
-- Re：正则表达式
+- Re：正则表达式，简洁表达一组字符串
+    - IP地址：`(([1-9]?\d|1\d{2}|2[0-4]\d|25[0.5]).){3}`
 - Scrapy：网络爬虫原理介绍，专业爬虫框架介绍
 
 2、HTTP协议
