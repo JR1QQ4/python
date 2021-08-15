@@ -170,3 +170,48 @@ demo = """<html><head><title>This is a python demo page</title></head>
 #     printUnivList(uInfo, 20)
 # if __name__ == '__main__':
 #     main()
+
+# 11
+# match = re.search(r'[1-9]\d{5}', 'BIT 100081')
+# if match:
+#     print(match.group(0))  # 100081
+# match1 = re.match(r'[1-9]\d{5}', 'BIT 100081')
+# if match1:  # 空，match 从头开始
+#     print(match1.group(0))
+# match2 = re.match(r'[1-9]\d{5}', '100081 BIT')
+# if match2:
+#     print(match2.group(0))  # 100081
+# match3 = re.findall(r'[1-9]\d{5}', 'BIT100081 TSU100084')
+# print(match3)  # ['100081', '100084']
+# match4 = re.split(r'[1-9]\d{5}', 'BIT100081 TSU100084')
+# print(match4)  # ['BIT', ' TSU', '']
+# match5 = re.split(r'[1-9]\d{5}', 'BIT100081 TSU100084', maxsplit=1)
+# print(match5)  # ['BIT', ' TSU100084']
+# for m in re.finditer(r'[1-9]\d{5}', 'BIT100081 TSU100084'):
+#     if m:
+#         print(m.group(0))  # 100081  100084
+# match6 = re.sub(r'[1-9]\d{5}', ':zipcode', 'BIT100081 TSU100084')
+# print(match6)  # BIT:zipcode TSU:zipcode
+
+# 12
+# m = re.search(r'[1-9]\d{5}', 'BIT100081 TSU100084')
+# print(m.string)  # BIT100081 TSU100084
+# print(m.re)  # re.compile('[1-9]\\d{5}')
+# print(m.pos)  # 0
+# print(m.endpos)  # 19
+# print(m.group(0))  # 100081
+# print(m.start())  # 3
+# print(m.end())  # 9
+# print(m.span())  # (3, 9)
+
+# 13
+# match = re.search(r'PY.*N', 'PYANBNCNDN')
+# print(match.group(0))  # PYANBNCNDN
+# match1 = re.search(r'PY.*?N', 'PYANBNCNDN')
+# print(match1.group(0))  # PYAN
+
+
+
+
+
+

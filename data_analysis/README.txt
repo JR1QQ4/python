@@ -11,7 +11,30 @@
 - Projects：实战项目
 - Re：正则表达式，简洁表达一组字符串
     - IP地址：`(([1-9]?\d|1\d{2}|2[0-4]\d|25[0.5]).){3}`
+    - 正则表达式的标识类型
+        - raw string 类型（原生字符串类型）：`r'[1-9]\d{5}'`
+        - string 类型：`'[1-9]\\d{5}'`
+    - Re 库主要功能函数
+        - re.search()，搜索匹配第一个位置，返回 match 对象
+        - re.match()：从一个字符串的开始位置进行匹配，返回 match 对象
+        - re.findall()：搜索字符串，以列表形式返回全部能匹配的子串
+        - re.split()：将字符串按照正则匹配结果进行分割，返回列表类型
+        - re.finditer()：搜索字符串，返回一个匹配结果的迭代类型，每个迭代元素都是 match 对象
+        - re.sub()：替换所有匹配到的字符串，返回替换后的字符串
+        - re.compile()：将正则表达式的字符串形式编译成正则表达式对象，`regex = re.compile(r'[1-9]\d{5}')`
 - Scrapy：网络爬虫原理介绍，专业爬虫框架介绍
+    - "5+2"结构：SPIDERS、ENGINE、SCHEDULER、DOWNLOADER、ITEM PIPELINES
+    - Scrapy 常用命令
+        - 创建一个新工程：`scrapy startproject <name> [dir]`
+        - 创建一个爬虫：`scrapy genspider [options] <name> <domain>`
+        - 获取爬虫配置信息：`scrapy settings [options]`
+        - 运行一个爬虫：`scrapy crawl <spider>`
+        - 列出工程中所有爬虫：`scrapy list`
+        - 启动 URL 调试命令行：`scrapy shell [url]`
+    - 常用的类
+        - Request 类
+        - Response 类
+        - Item 类
 
 2、HTTP协议
 - HTTP是一个基于”请求与响应“模式的、无状态的应用层协议
