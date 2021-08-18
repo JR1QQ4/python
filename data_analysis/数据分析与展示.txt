@@ -11,3 +11,5 @@
 2、Anaconda
 - 一个集成各类Python工具的集成平台
 - conda：一个工具，用于包管理和环境管理，Anaconda来源于conda
+
+尽量休息
