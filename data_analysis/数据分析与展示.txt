@@ -12,4 +12,45 @@
 - 一个集成各类Python工具的集成平台
 - conda：一个工具，用于包管理和环境管理，Anaconda来源于conda
 
-尽量休息
+3、Numpy
+- N维数组对象ndarray
+  - 观察：科学计算中，一个维度所有数据的类型往往相同
+  - 数组对象采用相同的数据类型，有助于节省运算和存储空间
+  - np.array()生成一个ndarray数组，输出成[]形式，元素由空格分割
+    - 轴（axis）保存数据的维度，秩（rank）轴的数量
+  - 创建ndarray
+    - np.arange(n) 类似range函数，返回ndarray类型，元素从0到-1
+    - no.ones(shape)  根据shape生成一个全1数组，shape是元组类型
+    - np.zeros(shape)  根据shape生成一个全0数组，shape是元组类型
+    - np.full(shape,val)  根据shape生成一个数组，每个元素值都是val
+    - np.eye(n)  创建一个正方的n*n单位矩阵，对角线为1，其余为0
+    - np.ones_link(a)  根据数组a的形状生成一个全1数组
+    - np.zeros_like(a)  根据数组a的形状生成一个全0数组
+    - np.full_like(a, val)  根据数组a的形状生成一个数组，每个元素都是val
+    - np.linspace()  根据起止数据等间距填充数据，形成数组
+    - np.concatenate()  将两个或多个数组合并成一个数组
+  - ndarray数组的维度变换
+    - .reshape(shape)  不改变数组元素，返回一个shape形状的数组，原数组不变
+    - .resize(shape)  与reshape类似，但修改原数组
+    - .swapaxes(ax1, ax2)  将数组n个维度中两个维度进行调换
+    - .flatten()  对数据进行降维，返回折叠后的一维数组，原数组不变
+  - ndarray数组的类型变换
+    - .astype(new_type) 会创建一个新的数组（原数组的一个拷贝）
+  - ndarray数组向列表的转换
+    - .tolist()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
