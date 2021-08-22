@@ -38,6 +38,20 @@
     - .astype(new_type) 会创建一个新的数组（原数组的一个拷贝）
   - ndarray数组向列表的转换
     - .tolist()
+- 文件
+  - np.savetxt(frame, array, fmt='%.18e', delimiter=None)
+  - np.loadtxt(frame, dtype=np.float, delimiter=None, unpack=False)
+  - a.tofile('b.dat', sep=',', format='%d')
+  - np.fromfile(frame, dtype=np.float, count=-1, sep=',')
+  - np.save(fname, array)
+  - np.load(fname)
+- 随机数
+  - np.random.randint(100, 200, (3, 4))
+- 统计函数
+  - np.gradient(a)
+
+4、PIL图像处理库
+- pip install pillow
 
 
 

@@ -26,22 +26,52 @@ import numpy as np
 # print(np.eye(5))
 
 # 3
-a = np.array([9, 8, 7, 6, 5])
-print(a[2])  # 7
-print(a[1:4:2])  # [8 6]，[起始编号：终止编号（不含）：步长]
+# a = np.array([9, 8, 7, 6, 5])
+# print(a[2])  # 7
+# print(a[1:4:2])  # [8 6]，[起始编号：终止编号（不含）：步长]
+# a1 = np.arange(24).reshape((2, 3, 4))
+# print(a1)
+# print(a1[1, 2, 3])  # 23
+# print(a1[0, 1, 2])  # 6
+# print(a1[-1, -2, -3])  # 17
+# a2 = np.arange(24).reshape((2, 3, 4))
+# print(a2[:, 1, -3])
+# print(a2[:, 1:3, :])
+# print(a2[:, :, ::2])
 
-a1 = np.arange(24).reshape((2, 3, 4))
-print(a1)
-print(a1[1, 2, 3])  # 23
-print(a1[0, 1, 2])  # 6
-print(a1[-1, -2, -3])  # 17
+# 4。数组与标量
+# a = np.arange(24).reshape((2, 3, 4))
+# print(a)
+# print(a.mean())  # 11.5
+# a = a / a.mean()
+# print(a)
+# print(np.ceil(a))
+# b = np.sqrt(a)
+# print(np.maximum(a, b))
 
-a2 = np.arange(24).reshape((2, 3, 4))
-print(a2[:, 1, -3])
-print(a2[:, 1:3, :])
-print(a2[:, :, ::2])
+# 5
+# a = np.arange(100).reshape(5, 20)
+# np.savetxt('a.csv', a, fmt='%d', delimiter=',')
+# a.tofile("b.dat", format='%s')
 
+# 6
+# b = np.random.randint(100, 200, (3, 4))
 
+# 7
+# a = np.arange(100).reshape(5, 20)
+# np.sum(a)
+
+# 8
+# a = np.arange(100).reshape(5, 20)
+# np.gradient(a)
+
+# 9、彩色图片灰度变换
+from PIL import Image
+
+a = np.array(Image.open('').convert('L'))
+b = 255 - a  # (100/255)*a+150  255*(a/255)**2
+im = Image.fromarray(b.astype('uint8'))
+im.save('')
 
 
 
