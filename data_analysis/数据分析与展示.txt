@@ -52,6 +52,11 @@
 
 4¡¢PILÍ¼Ïñ´¦Àí¿â
 - pip install pillow
+- from PIL import Image
+
+5¡¢matplotlib
+- pip3 install matplotlib -i https://pypi.tuna.tsinghua.edu.cn/simple
+- import matplotlib.pyplot as plt
 
 
 

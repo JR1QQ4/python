@@ -68,10 +68,21 @@ import numpy as np
 # 9、彩色图片灰度变换
 from PIL import Image
 
-a = np.array(Image.open('').convert('L'))
-b = 255 - a  # (100/255)*a+150  255*(a/255)**2
-im = Image.fromarray(b.astype('uint8'))
-im.save('')
+# a = np.array(Image.open('').convert('L'))
+# b = 255 - a  # (100/255)*a+150  255*(a/255)**2
+# im = Image.fromarray(b.astype('uint8'))
+# im.save('')
+
+# 10
+import matplotlib.pyplot as plt
+
+plt.plot([3, 1, 4, 5, 2])
+plt.ylabel("Grade")
+# plt.savefig('test', dpi=600)  # PNG文件
+plt.show()
+
+
+
 
 
 
