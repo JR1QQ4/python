@@ -119,7 +119,13 @@ from scipy.io import wavfile
 # plt.show()
 # plt.close(fig)
 
+# 12
+import pandas as pd
 
+d = pd.Series(range(20))
+print(d)
+print('*' * 50)
+print(d.cumsum())
 
 
 
