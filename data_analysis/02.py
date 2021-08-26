@@ -122,17 +122,51 @@ from scipy.io import wavfile
 # 12
 import pandas as pd
 
-d = pd.Series(range(20))
-print(d)
-print('*' * 50)
-print(d.cumsum())
+# d = pd.Series(range(20))
+# print(d)
+# print('*' * 50)
+# print(d.cumsum())
 
-
-
-
-
-
-
-
-
-
+# 13
+# Series 类型
+# a = pd.Series([9, 8, 7, 6])
+# print(a)
+# b = pd.Series([9, 8, 7, 6], index=['a', 'b', 'c', 'd'])
+# print(b)
+# s = pd.Series(25, index=['a', 'b', 'c'])
+# print(s)
+# d = pd.Series({'a': 9, "b": 8, "c": 7})
+# print(d)
+# e = pd.Series({'a': 9, "b": 8, "c": 7}, index=['a', 'b', 'c', 'd'])
+# print(e)
+# 使用 ndarray 创建
+# n = pd.Series(np.arange(5))
+# print(n)
+# f = pd.Series(np.arange(5), index=np.arange(9, 4, -1))
+# print(f)
+# 索引
+# g = pd.Series([9, 8, 7, 6], index=['a', 'b', 'c', 'd'])
+# print(g.index)
+# print(g.values)
+# print(g['b'])
+# print(g[1])
+# # print(g[['c', 'd', 0]])
+# print(g[['c', 'b', 'a']])
+# 基本操作
+# h = pd.Series([9, 8, 7, 6], index=['a', 'b', 'c', 'd'])
+# print(h[:3])
+# print(h[h > h.median()])
+# print(np.exp(h))
+# print('c' in h)  # True
+# print(0 in h)  # False
+# print(h.get('f', 100))
+# j = pd.Series([1, 2, 3], index=['c', 'd', 'e'])
+# # print(h + j)
+# # print(j.name)
+# # j.name = 'Series对象'
+# # j.index.name = '索引列'
+# # print(j)
+# j['c'] = 15
+# print(j)
+# j[['d', 'e']] = 20
+# print(j)

@@ -61,7 +61,7 @@
 6、pandas
 - pip3 install pandas -i https://pypi.tuna.tsinghua.edu.cn/simple
 - import pandas as pd
-- pandas的两个数据类型：Series, DataFrame
+- pandas的两个数据类型：Series（带标签的数组）, DataFrame
   - Numpy：基础数据类型，关注数据的结构表达，维度（数据间关系）
   - Pandas：扩展数据类型，关注数据的应用表达，数据与索引间关系
 
