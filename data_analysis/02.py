@@ -170,3 +170,33 @@ import pandas as pd
 # print(j)
 # j[['d', 'e']] = 20
 # print(j)
+
+# 14
+# DataFrame
+d = pd.DataFrame(np.arange(10).reshape(2, 5))
+print(d)
+dt = {'one': pd.Series([1, 2, 3], index=['a', 'b', 'c']),
+      'two': pd.Series([9, 8, 7, 6], index=['a', 'b', 'c', 'd'])}
+d1 = pd.DataFrame(dt)
+print(d1)
+print(pd.DataFrame(d1, index=['a', 'b', 'c'], columns=['two', 'three']))
+dl = {'one': [1, 2, 3, 4], 'two': [9, 8, 7, 6]}
+d2 = pd.DataFrame(dl, index=['a', 'b', 'c', 'd'])
+print(d2)
+dm = {'城市': ['北京', '上海', '广州', '深圳', '南京'],
+      '环比': [101.5, 101.2, 101.3, 102.0, 100.1],
+      '同比': [120.7, 127.3, 119.4, 140.9, 101.4],
+      '定基': [121.4, 127.8, 120.0, 145.5, 101.6]}
+d3 = pd.DataFrame(dm, index=['c1', 'c2', 'c3', 'c4', 'c5'])
+print(d3)
+print(d3.index)
+print(d3.values)
+print(d3.columns)
+
+
+
+
+
+
+
+
