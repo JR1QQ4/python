@@ -62,10 +62,38 @@
 - pip3 install pandas -i https://pypi.tuna.tsinghua.edu.cn/simple
 - import pandas as pd
 - pandas的两个数据类型：Series（带标签的数组）, DataFrame（表格型数据类型，二维带标签的数组）
+  - 操作
+    - 重新索引：reindex(index, columns, method, limit, copy)
+      - 索引类型Index对象
+        - 常用方法
+          - append(idx)
+          - diff(idx)
+          - intersection(idx)
+          - union(idx)
+          - delete(loc)
+          - indert(loc,e)
+    - 删除指定索引对象：drop()
+  - 运算
+    - 算术运算：自动补齐，补齐参数值NaN，fill_value参数可以修改默认值
+    - 比较运算：不进行补齐
+  - 排序
+    - sort_index(axis=0, ascending=True)：根据索引进行排序，默认升序；0轴表示纵轴，1轴表示横轴
+  - 统计分析函数
+    - sum()
+    - count() 非NaN值得数量
+    - mean() median() 算术平均数、算术中位数
+    - var() std() 反差、标准差
+    - min() max()
+    - argmin() argmax() 索引位置（自动索引）
+    - idxmin() idxmax() 索引（自定义索引）
+    - describe() 针对0轴（各列）的统计汇总
+  - 累计统计函数
+    - cumsum()  cumprod()  cummax()  cummin()
+    - rolling()
+- Numpy与Pandas区别
   - Numpy：基础数据类型，关注数据的结构表达，维度（数据间关系）
   - Pandas：扩展数据类型，关注数据的应用表达，数据与索引间关系
 
-休息
 
 
 
