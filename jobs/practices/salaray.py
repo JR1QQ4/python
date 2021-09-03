@@ -57,8 +57,9 @@ people = {
 # 也可以传入路径参数，如 bar.render("mycharts.html")
 # bar.render()
 
-class Demographics:
-    def all_people(self):
+
+class Population:
+    def total_population(self):
         pass
 
     def population_rate(self):
@@ -68,8 +69,18 @@ class Demographics:
         pass
 
 
+class EmploymentStatusAndWages:
+    def labor_force(self):
+        pass
 
+    def employment(self):
+        pass
 
+    def unemployment(self):
+        pass
+
+    def average_wage(self):
+        pass
 
 
 
