@@ -10,6 +10,16 @@ from pyecharts.render import make_snapshot
 # 使用 snapshot-selenium 渲染图片
 from snapshot_selenium import snapshot
 
+import os
+import yaml
+
+date_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datas')
+population_yaml = os.path.join(date_path, 'population.yaml')
+print(population_yaml)
+
+population_data = yaml.safe_load(open(population_yaml))
+print(population_data['population']['total_population'])
+
 # 劳动人口，单位万
 people = {
     '2019': 81104,
