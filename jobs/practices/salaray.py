@@ -15,33 +15,12 @@ import yaml
 
 date_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datas')
 population_yaml = os.path.join(date_path, 'population.yaml')
+employment_yaml = os.path.join(date_path, 'employment.yaml')
 print(population_yaml)
+print(employment_yaml)
 
 population_data = yaml.safe_load(open(population_yaml))
-print(population_data['population']['total_population'])
-
-# 劳动人口，单位万
-people = {
-    '2019': 81104,
-    '2018': 80525,
-    '2017': 80686,
-    '2016': 80694,
-    '2015': 80091,
-    '2014': 79690,
-    '2013': 79300,
-    '2012': 78894,
-    '2011': 78579,
-    '2010': 78388,
-    '2009': 77510,
-    '2008': 77046,
-    '2007': 76531,
-    '2006': 76315,
-    '2005': 76120,
-    '2004': 75290,
-    '2003': 74911,
-    '2002': 74492,
-    '2001': 73884
-}
+employment_data = yaml.safe_load(open(employment_yaml))
 
 # print(pyecharts.__version__)
 
