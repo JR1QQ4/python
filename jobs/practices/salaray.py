@@ -22,6 +22,10 @@ print(employment_yaml)
 population_data = yaml.safe_load(open(population_yaml))
 employment_data = yaml.safe_load(open(employment_yaml))
 
+
+print(population_data['Population'])
+print(employment_data['EmploymentStatusAndWages'])
+
 # print(pyecharts.__version__)
 
 # 方法一
@@ -47,6 +51,16 @@ employment_data = yaml.safe_load(open(employment_yaml))
 # bar.render()
 
 
+def my_render(items: dict, y_name='y轴名称', title='标题', subtitle='副标题', filepath='mycharts.html'):
+    bar = (
+        Bar()
+        .add_xaxis([x + '年' for x in list(items.keys())[::-1]])
+        .add_yaxis(y_name, [y for y in list(items.values())[::-1]])
+        .set_global_opts(title_opts=opts.TitleOpts(title=title, subtitle=subtitle))
+    )
+    bar.render(filepath)
+
+
 class Population:
     def total_population(self):
         pass
@@ -70,14 +84,3 @@ class EmploymentStatusAndWages:
 
     def average_wage(self):
         pass
-
-
-
-
-
-
-
-
-
-
-
