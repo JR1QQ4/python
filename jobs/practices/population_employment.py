@@ -16,15 +16,14 @@ import yaml
 date_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datas')
 population_yaml = os.path.join(date_path, 'population.yaml')
 employment_yaml = os.path.join(date_path, 'employment.yaml')
-print(population_yaml)
-print(employment_yaml)
+# print(population_yaml)
+# print(employment_yaml)
 
 population_data = yaml.safe_load(open(population_yaml))
 employment_data = yaml.safe_load(open(employment_yaml))
 
-
-print(population_data['Population'])
-print(employment_data['EmploymentStatusAndWages'])
+# print(population_data['Population'])
+# print(employment_data['EmploymentStatusAndWages'])
 
 # print(pyecharts.__version__)
 
@@ -51,14 +50,19 @@ print(employment_data['EmploymentStatusAndWages'])
 # bar.render()
 
 
-def my_render(items: dict, y_name='y轴名称', title='标题', subtitle='副标题', filepath='mycharts.html'):
+def my_render(items: dict, y_name='y轴名称', title='标题', subtitle='副标题', filepath='mycharts.html', payload_str=''):
     bar = (
         Bar()
-        .add_xaxis([x + '年' for x in list(items.keys())[::-1]])
-        .add_yaxis(y_name, [y for y in list(items.values())[::-1]])
+        .add_xaxis([x + payload_str for x in list(items.keys())[::-1]])
+        .add_yaxis(y_name, [y for y in list(items.values())[::-1]], bar_width='50%')
         .set_global_opts(title_opts=opts.TitleOpts(title=title, subtitle=subtitle))
     )
     bar.render(filepath)
+
+
+total_population = population_data['Population']['total_population']
+my_render(total_population, y_name='年末总人口(万人)', title='总人口', subtitle='副标题',
+          filepath='outputs/total_population.html', payload_str='年')
 
 
 class Population:
