@@ -55,8 +55,24 @@ def my_render(items: dict, y_name='y轴名称', title='标题', subtitle='副标
         Bar()
         .add_xaxis([x + payload_str for x in list(items.keys())[::-1]])
         .add_yaxis(y_name, [y for y in list(items.values())[::-1]], bar_width='50%')
-        .set_global_opts(title_opts=opts.TitleOpts(title=title, subtitle=subtitle))
+        .set_global_opts(title_opts=opts.TitleOpts(title=title, subtitle=subtitle),
+                         yaxis_opts=opts.AxisOpts(name="我是Y轴"),
+                         xaxis_opts=opts.AxisOpts(
+                             # 坐标轴类型。可选：
+                             # value：数值轴，适用于连续数据
+                             # category：类目轴，适用于离散的类目数据，为该类型时必须通过 data 设置类目数据
+                             # time：时间轴，适用于连续的时序数据，与数值相比时间轴带有时间的格式化，在刻度上计算也有所不同
+                             # 例如会根据跨度的范围来决定使用月，星期，日还是小时范围的刻度
+                             # log 对数轴，适用于对数数据
+                             type_='value',
+                             # 坐标轴名称
+                             name='我是X轴',
+                             # 是否相似 X 轴
+                             is_show=True,
+                             # 
+                         ))
     )
+    print(bar.options)
     bar.render(filepath)
 
 
