@@ -7,11 +7,11 @@
 
 </head>
 <body>
-    <div id="e1c331c39ce2430f9b8780a4e9308fea" class="chart-container" style="width:900px; height:500px;"></div>
+    <div id="4bf7557633294e55a18c893696fd59cb" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_e1c331c39ce2430f9b8780a4e9308fea = echarts.init(
-            document.getElementById('e1c331c39ce2430f9b8780a4e9308fea'), 'white', {renderer: 'canvas'});
-        var option_e1c331c39ce2430f9b8780a4e9308fea = {
+        var chart_4bf7557633294e55a18c893696fd59cb = echarts.init(
+            document.getElementById('4bf7557633294e55a18c893696fd59cb'), 'white', {renderer: 'canvas'});
+        var option_4bf7557633294e55a18c893696fd59cb = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -126,11 +126,21 @@
     },
     "xAxis": [
         {
+            "type": "category",
+            "name": "\u8fd9\u662fX\u8f74",
             "show": true,
             "scale": false,
             "nameLocation": "end",
             "nameGap": 15,
             "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "rotate": -45,
+                "margin": 8,
+                "interval": 0,
+                "verticalAlign": "top"
+            },
             "inverse": false,
             "offset": 0,
             "splitNumber": 5,
@@ -202,7 +212,7 @@
         }
     ]
 };
-        chart_e1c331c39ce2430f9b8780a4e9308fea.setOption(option_e1c331c39ce2430f9b8780a4e9308fea);
+        chart_4bf7557633294e55a18c893696fd59cb.setOption(option_4bf7557633294e55a18c893696fd59cb);
     </script>
 </body>
 </html>
