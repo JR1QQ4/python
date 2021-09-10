@@ -7,11 +7,11 @@
 
 </head>
 <body>
-    <div id="4bf7557633294e55a18c893696fd59cb" class="chart-container" style="width:900px; height:500px;"></div>
+    <div id="689ce2eb00ee4d90843bac83e1a66797" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_4bf7557633294e55a18c893696fd59cb = echarts.init(
-            document.getElementById('4bf7557633294e55a18c893696fd59cb'), 'white', {renderer: 'canvas'});
-        var option_4bf7557633294e55a18c893696fd59cb = {
+        var chart_689ce2eb00ee4d90843bac83e1a66797 = echarts.init(
+            document.getElementById('689ce2eb00ee4d90843bac83e1a66797'), 'white', {renderer: 'canvas'});
+        var option_689ce2eb00ee4d90843bac83e1a66797 = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -132,14 +132,22 @@
             "scale": false,
             "nameLocation": "end",
             "nameGap": 15,
+            "nameTextStyle": {
+                "fontSize": 12
+            },
             "gridIndex": 0,
+            "axisTick": {
+                "show": true,
+                "alignWithLabel": false,
+                "inside": false,
+                "length": 10
+            },
             "axisLabel": {
                 "show": true,
                 "position": "top",
                 "rotate": -45,
                 "margin": 8,
-                "interval": 0,
-                "verticalAlign": "top"
+                "interval": 0
             },
             "inverse": false,
             "offset": 0,
@@ -210,9 +218,30 @@
             "padding": 5,
             "itemGap": 10
         }
-    ]
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 0,
+        "max": 100,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
 };
-        chart_4bf7557633294e55a18c893696fd59cb.setOption(option_4bf7557633294e55a18c893696fd59cb);
+        chart_689ce2eb00ee4d90843bac83e1a66797.setOption(option_689ce2eb00ee4d90843bac83e1a66797);
     </script>
 </body>
 </html>
