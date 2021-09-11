@@ -133,3 +133,6 @@
 | 画布项(item) | 边界盒(bounding box) | 包装(pack) |
 | 几何管理器(geometry manager) | 绑定(binding) |  |
 |  |  |  |
+
+
+加班休息！！！
