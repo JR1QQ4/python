@@ -59,4 +59,33 @@ import math
 #     else:
 #         return x * fact(x - 1)
 
+# 6、快速排序
+# def sum(arr):
+#     total = 0
+#     for x in arr:
+#         total += x
+#     return total
+# print(sum([1, 2, 3, 4]))
+# 步骤：（1）选择基准值；（2）将数组分成两个子数组：小于基准值的元素和大于基准值的元素；（3）对这两个子数组进行快速排序
+def quicksort(array):
+    if len(array) < 2:
+        return array
+    else:
+        pivot = array[0]
+        less = [i for i in array[1:] if i <= pivot]
+        greater = [i for i in array[1:] if i > pivot]
+        return quicksort(less) + [pivot] + quicksort(greater)
+print(quicksort([10, 5, 2, 3]))  # [2, 3, 5, 10]
+
+
+
+
+
+
+
+
+
+
+
+
 
