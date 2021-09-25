@@ -78,21 +78,34 @@ import math
 # print(quicksort([10, 5, 2, 3]))  # [2, 3, 5, 10]
 
 # 7、散列表
-cache = {}
-def get_data_from_server(url):
-    return None
-def get_page(url):
-    if cache.get(url):
-        return cache[url]
-    else:
-        data = get_data_from_server(url)
-        cache[url] = data
-        return data
+# cache = {}
+# def get_data_from_server(url):
+#     return None
+# def get_page(url):
+#     if cache.get(url):
+#         return cache[url]
+#     else:
+#         data = get_data_from_server(url)
+#         cache[url] = data
+#         return data
 
-
-
-
-
+# 8、广度优先搜索
+# 队列——先进先出（FIFO）；栈——后进先出（LIFO）
+# def search(name):
+#     search_queue = deque()
+#     search_queue += graph[name]
+#     searched = []  # 这个数组用于记录检查过的人
+#     while search_queue:
+#         person = search_queue.popleft()
+#         if person not in searched:  # 仅当这个人没检查过时才检查
+#             if person_is_seller(person):
+#                 print(person + " is a mango seller!")
+#                 return True
+#             else:
+#                 search_queue += graph[person]
+#                 searched.append(person)  # 将这个人标记为检查过
+#     return False
+# search("you")
 
 
 
