@@ -107,8 +107,29 @@ import math
 #     return False
 # search("you")
 
-
-
+# 9、狄克斯特拉算法
+# 权重（Weight），带权重的图称为加权图（weighted graph），不带权重的称为非加权图（unweighted graph）
+# processed = []
+# def find_lowest_cost_node(costs):
+#     lowest_cost = float("inf")
+#     lowest_cost_node = None
+#     for node in costs:
+#         cost = costs[node]
+#         if cost < lowest_cost and node not in processed:
+#             lowest_cost = cost
+#             lowest_cost_node = node
+#     return lowest_cost_node
+# node = find_lowest_cost_node(costs)  # 在未处理的节点中找出开销最小的节点
+# while node is not None:  # 在所有节点被处理后结束
+#     cost = costs[node]
+#     neighbors = graph[node]
+#     for n in neighbors.keys():  # 遍历当前节点的所有邻居
+#         new_cost = cost + neighbors[n]
+#         if costs[n] > new_cost:  # 如果经当前节点前往该邻居更近
+#             costs[n] = new_cost  # 就更新邻居的开销
+#             parents[n] = node  # 同时将邻居节点的父节点设置为当前节点
+# processed.append(node)  # 将当前节点标记为处理过
+# node = find_lowest_cost_node(costs)  # 找出接下来要处理的节点，并循环
 
 
 
