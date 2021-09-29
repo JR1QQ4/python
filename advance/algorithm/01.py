@@ -131,6 +131,21 @@ import math
 # processed.append(node)  # 将当前节点标记为处理过
 # node = find_lowest_cost_node(costs)  # 找出接下来要处理的节点，并循环
 
+# 10、贪婪算法
+# 贪婪算法很简单：每步都采取最优的做法
+# 面临NP完全问题时，最佳的做法是使用近似算法
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
