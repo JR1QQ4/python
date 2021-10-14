@@ -5,6 +5,8 @@ print('\n*************** 一.变量和简单数据类型 ***************\n')
 
 # 1.字符串
 print("\n======= String =======\n")
+import keyword
+print(keyword.kwlist)
 
 name = "ada lovelace"
 print(name.title())
