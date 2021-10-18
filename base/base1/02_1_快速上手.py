@@ -5,26 +5,33 @@
 
 print('********* 第 1 章 Python 基础 ***********')
 
-num_01 = 2 ** 3
-num_02 = 22 % 8
-num_03 = 22 // 8
-num_04 = 22 / 8
-print(str(num_01), str(num_02), str(num_03), str(num_04))
+# num_01 = 2 ** 3
+# num_02 = 22 % 8
+# num_03 = 22 // 8
+# num_04 = 22 / 8
+# print(str(num_01), str(num_02), str(num_03), str(num_04))
 
 # print('Hello world!)  #  SyntaxError: EOL while scanning string literal
 # print('Alice' * 5.0)  # TypeError: can't multiply sequence by non-int of type 'float'
 # print('Alice' * 'Bob')  # TypeError: can't multiply sequence by non-int of type 'str'
 
-print(str(-3.14), str(29))
-print(float('3.14'))
-print(int(1.25))
+# print(str(-3.14), str(29))
+# print(float('3.14'))
+# print(int(1.25))
 # print(int('99.99'))  # ValueError: invalid literal for int() with base1 10: '99.99'
 
-print(42 == '42')  # False
-print(42 == 42.0)  # True
-print(42.0 == 0042.000)  # True
+# print(42 == '42')  # False
+# print(42 == 42.0)  # True
+# print(42.0 == 0042.000)  # True
 
 # 100 = 1  # can't assign to literal
+str1 = "My name is " + "World."
+str2 = "My name is {}.".format("World")
+str3 = "My name is %s." % "World"
+name = "World"
+str_ = F"My name is {name}."
+print(str3)
+print(str_)
 
 print('********* 第 2 章 控制流 ***********')
 
