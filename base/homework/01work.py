@@ -88,6 +88,38 @@
 #         print("{}*{}={:<4}".format(i, j, i*j), end='')
 #     print()
 
+# number = 100
+# def func():
+#     # print(number + 100)
+#     global number
+#     number = number + 100  # 没有global声明时，会报“在声明之前对变量引用”的错误
+#     print(number)
+# print(number)
+# func()
+
+# lis1 = [1, 2]
+# lis2 = [11, 22]
+# lis3 = [111, 222, 333]
+# print(list(zip(lis1, lis2, lis3)))
+
+# lis1 = [88, 23, 66, 435, 123, 576]
+# res = filter(lambda x: x > 80, lis1)
+# print(list(res))
+
+# lis1 = [(11, 22, 33), (22, 33, 11), (33, 11, 22)]
+# lis1.sort(key=lambda x: x[1])  # 以第二个元素排序
+# print(lis1)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
