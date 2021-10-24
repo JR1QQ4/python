@@ -110,9 +110,18 @@
 # lis1.sort(key=lambda x: x[1])  # 以第二个元素排序
 # print(lis1)
 
+# from base.homework import pack
+# print(pack.name)
+# print(pack.test01.name)
 
-
-
+# try:
+#     pass
+# except NameError:
+#     pass
+# else:
+#     pass  # try的代码没有执行错误时执行
+# finally:
+#     pass
 
 
 
