@@ -127,8 +127,15 @@
 # _变量：不成文的规定，伪声明表示私有化，外部可以调用；
 # __变量：私有属性
 # delattr(MyClass, attr)  # 动态删除属性
-#
 
+def login_check(username=None, password=None):
+    if username is not None and password is not None:
+        if username == 'admin' and password == 'pwd':
+            return {'code': 0, 'msg': '登录成功'}
+        else:
+            return {'code': 1, 'msg': '账号或密码不正确'}
+    else:
+        return {'code': 1, 'msg': '所有的参数不能为空'}
 
 
 
