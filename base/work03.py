@@ -27,5 +27,8 @@ runner = TestRunner(suite)
 # 使用unittest report的区别
 runner.run()
 
-
+# unittest 的执行顺序
+# 1.同一个【用例类】中是根据用例【方法名】按照 ASCII 码进行排序
+# 2.同一个【用例文件】中的测试类型是根据【类名】按照 ASCII 码进行排序
+# 3.同一个【文件夹】中的测试用例文件是根据【文件名】按照 ASCII 码进行排序
 

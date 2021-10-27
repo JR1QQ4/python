@@ -35,3 +35,27 @@ class TestRegister(unittest.TestCase):
 
     def test_register_02(self):
         assert '100' == '100'
+
+
+"""
+ddt 的使用步骤：
+    1、测试类前面使用 ddt
+    2、在测试方法前面使用 list_data(测试数据)
+    3、在测试方法中定义一个参数，用来接收用例数据
+"""
+from unittestreport import ddt, list_data
+
+cases = [
+    {'expected': {'code': 1, 'msg': '账号或密码不正确1'}, 'params': {'username': 'admin1', 'password': 'pwd1'}},
+    {'expected': {'code': 1, 'msg': '账号或密码不正确2'}, 'params': {'username': 'admin1', 'password': 'pwd2'}}
+]
+
+
+@ddt
+class TestDDT(unittest.TestCase):
+    @list_data(cases)
+    def test_login(self, item):
+        params = item['params']
+        expected = item['expected']
+        res = login_check(**params)
+        self.assertEqual(expected, res)
