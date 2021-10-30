@@ -1,5 +1,7 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
+import unittest
+
 import openpyxl
 from openpyxl.workbook.workbook import Worksheet
 
@@ -33,6 +35,9 @@ from openpyxl.workbook.workbook import Worksheet
 #     temp = dict(zip(title, data))
 #     cases.append(temp)
 # print(cases)
+from unittestreport import ddt, list_data
+
+from base.homework.work01 import login_check
 
 
 class HandleExcel:
@@ -59,10 +64,30 @@ class HandleExcel:
         wb.save(self.filename)
 
 
+@ddt
+class TestLogin(unittest.TestCase):
+    excel = HandleExcel('', '')
+    cases = excel.read_date()
+
+    @list_data(cases)
+    def test_login(self, item):
+        expected = eval(item['expected'])
+        params = eval(item['data'])
+        row = item['case_id'] + 1
+        res = login_check(**params)
+        try:
+            self.assertEqual(expected, res)
+        except AssertionError as e:
+            self.excel.write_data(row=row, column=5, val='未通过')
+            raise e
+        else:
+            self.excel.write_data(row=row, column=5, val='通过')
+
+
 if __name__ == '__main__':
     excel = HandleExcel('', '')
-    res = excel.read_date()
-    print(res)
+    cases = excel.read_date()
+    print(cases)
 
 
 
