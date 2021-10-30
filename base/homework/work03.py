@@ -15,24 +15,64 @@ from openpyxl.workbook.workbook import Worksheet
 # print(cl.value)
 
 # 方法二
-wb = openpyxl.load_workbook('')
-sh: Worksheet = wb['Sheet1']
-# rows：按行获取表单中所有的格子，每一行的格子放到一个元组中
-rows = list(sh.rows)
-for i in rows:
-    print(i)
-# columns：按列获取表单中所有的格子，每一列的格子放到一个元组中
-columns = list(sh.columns)
-for j in columns:
-    print(j)
-# 获取所有数据
-title = [row.value for row in rows[0]]
-cases = []
-for item in rows[1:]:
-    data = [i.value for i in item]
-    temp = dict(zip(title, data))
-    cases.append(temp)
-print(cases)
+# wb = openpyxl.load_workbook('')
+# sh: Worksheet = wb['Sheet1']
+# # rows：按行获取表单中所有的格子，每一行的格子放到一个元组中
+# rows = list(sh.rows)
+# for i in rows:
+#     print(i)
+# # columns：按列获取表单中所有的格子，每一列的格子放到一个元组中
+# columns = list(sh.columns)
+# for j in columns:
+#     print(j)
+# # 获取所有数据
+# title = [row.value for row in rows[0]]
+# cases = []
+# for item in rows[1:]:
+#     data = [i.value for i in item]
+#     temp = dict(zip(title, data))
+#     cases.append(temp)
+# print(cases)
 
 
-休息。。。
+class HandleExcel:
+    def __init__(self, filename, sheetname):
+        self.filename = filename
+        self.sheetname = sheetname
+
+    def read_date(self):
+        wb = openpyxl.load_workbook(self.filename)
+        sh = wb[self.sheetname] if self.sheetname is not None else wb[wb.sheetnames[0]]
+        res = list(sh.rows)
+        title = [i.value for i in res[0]]
+        cases = []
+        for item in res[1:]:
+            data = [i.value for i in item]
+            dic = dict(zip(title, data))
+            cases.append(dic)
+        return cases
+
+    def write_data(self, row, column, val):
+        wb = openpyxl.load_workbook(self.filename)
+        sh = wb[self.sheetname] if self.sheetname is not None else wb[wb.sheetnames[0]]
+        sh.cell(row=row, column=column, value=val)
+        wb.save(self.filename)
+
+
+if __name__ == '__main__':
+    excel = HandleExcel('', '')
+    res = excel.read_date()
+    print(res)
+
+
+
+
+
+
+
+
+
+
+
+
+
