@@ -1,0 +1,8 @@
+- data:
+    username: admin
+    password: 123456
+  expected:
+    code: 0
+    msg: 测试通过
+  title: 测试成功
+  case_id: 1
